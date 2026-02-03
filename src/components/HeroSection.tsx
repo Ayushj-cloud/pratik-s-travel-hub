@@ -40,7 +40,7 @@ const HeroSection = () => {
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6">
             Explore India's
-            <span className="block text-gradient-sunset">Hidden Wonders</span>
+            <span className="block text-gradient-ocean">Hidden Wonders</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -54,7 +54,7 @@ const HeroSection = () => {
               </Button>
             </Link>
             <a
-              href="https://youtube.com"
+              href="https://youtube.com/@pratikjainvlogs"
               target="_blank"
               rel="noopener noreferrer"
             >
