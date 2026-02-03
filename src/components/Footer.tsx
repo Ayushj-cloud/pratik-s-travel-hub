@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-sunset flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-gradient-ocean flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
@@ -60,7 +60,7 @@ const Footer = () => {
             <h4 className="font-serif text-lg font-semibold">Follow Along</h4>
             <div className="flex items-center gap-4">
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@pratikjainvlogs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-destructive transition-colors"

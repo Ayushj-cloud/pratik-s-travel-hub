@@ -52,11 +52,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         adventure: {
-          sunset: "hsl(var(--adventure-sunset))",
           ocean: "hsl(var(--adventure-ocean))",
-          sand: "hsl(var(--adventure-sand))",
-          forest: "hsl(var(--adventure-forest))",
+          teal: "hsl(var(--adventure-teal))",
           sky: "hsl(var(--adventure-sky))",
+          deep: "hsl(var(--adventure-deep))",
+          foam: "hsl(var(--adventure-foam))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

@@ -36,7 +36,7 @@ const Index = () => {
                   className="w-full aspect-[4/5] object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-sunset rounded-2xl -z-0" />
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-ocean rounded-2xl -z-0" />
             </motion.div>
 
             <motion.div
@@ -168,7 +168,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-sunset relative overflow-hidden">
+      <section className="py-20 lg:py-32 bg-gradient-ocean relative overflow-hidden">
         <div className="absolute inset-0 bg-foreground/10" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div

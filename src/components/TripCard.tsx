@@ -61,7 +61,7 @@ const TripCard = ({
           </span>
         )}
         {featured && seatsLeft > 5 && (
-          <span className="absolute top-4 left-4 px-3 py-1 bg-gradient-sunset text-primary-foreground text-xs font-semibold rounded-full">
+          <span className="absolute top-4 left-4 px-3 py-1 bg-gradient-ocean text-primary-foreground text-xs font-semibold rounded-full">
             Featured Trip
           </span>
         )}
