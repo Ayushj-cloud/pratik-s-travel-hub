@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Youtube, Instagram, Camera, Map, Heart, Award, ArrowRight } from "lucide-react";
 import pratikImage from "@/assets/pratik-portrait.jpg";
-import heroImage from "@/assets/hero-travel.jpg";
+import bannerImage from "@/assets/banner.png";
 
 const About = () => {
   const milestones = [
@@ -22,15 +22,6 @@ const About = () => {
 
       {/* Hero */}
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={heroImage}
-            alt="Adventure background"
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-        </div>
-
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,11 +30,25 @@ const About = () => {
           >
             <span className="text-primary font-medium">About Me</span>
             <h1 className="font-serif text-4xl lg:text-6xl font-bold text-foreground mt-2 mb-6">
-              The Story Behind <span className="text-gradient-sunset">The Lens</span>
+              The Story Behind <span className="text-gradient-ocean">The Lens</span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               From a curious traveler with a camera to a full-time content creator, here's my journey of turning passion into purpose.
             </p>
+          </motion.div>
+
+          {/* YouTube Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-12 rounded-2xl overflow-hidden shadow-elevated"
+          >
+            <img
+              src={bannerImage}
+              alt="Pratik Jain Vlogs YouTube Banner"
+              className="w-full h-auto object-cover"
+            />
           </motion.div>
         </div>
       </section>
@@ -66,7 +71,7 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-ocean rounded-2xl -z-0" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-sunset rounded-2xl -z-0" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-2xl -z-0" />
             </motion.div>
 
             <motion.div
@@ -90,7 +95,7 @@ const About = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="https://youtube.com"
+                  href="https://youtube.com/@pratikjainvlogs"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -133,7 +138,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-sunset flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-ocean flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <div className="text-3xl lg:text-4xl font-bold text-foreground mb-1">
@@ -171,7 +176,7 @@ const About = () => {
                 className="flex gap-6 mb-8 last:mb-0"
               >
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-gradient-sunset flex items-center justify-center text-primary-foreground font-bold text-sm">
+                  <div className="w-12 h-12 rounded-full bg-gradient-ocean flex items-center justify-center text-primary-foreground font-bold text-sm">
                     {milestone.year.slice(2)}
                   </div>
                   {index < milestones.length - 1 && (
