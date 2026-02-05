@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Youtube, Instagram, Camera, Map, Heart, Award, ArrowRight } from "lucide-react";
-import pratikImage from "@/assets/pratik-portrait.jpg";
+import logo from "@/assets/logo.png";
 import bannerImage from "@/assets/banner.png";
 
 const About = () => {
@@ -64,11 +64,11 @@ const About = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-elevated">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-elevated bg-gradient-ocean p-8 flex items-center justify-center">
                 <img
-                  src={pratikImage}
+                  src={logo}
                   alt="Pratik Jain"
-                  className="w-full aspect-square object-cover"
+                  className="w-48 h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-elevated"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-ocean rounded-2xl -z-0" />
