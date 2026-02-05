@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Youtube, Instagram, Mail, MapPin, Heart } from "lucide-react";
+import { Youtube, Instagram, Mail, Heart } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-ocean flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img 
+                src={logo} 
+                alt="Pratik Jain Vlogs" 
+                className="w-10 h-10 rounded-full object-cover"
+              />
               <div>
                 <span className="font-serif text-xl font-bold">Pratik Jain</span>
                 <span className="block text-xs opacity-70">Vlogs</span>
