@@ -42,12 +42,13 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mt-12 rounded-2xl overflow-hidden shadow-elevated"
+            className="mt-12 max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-elevated relative"
           >
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
             <img
               src={bannerImage}
               alt="Pratik Jain Vlogs YouTube Banner"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover opacity-90"
             />
           </motion.div>
         </div>
