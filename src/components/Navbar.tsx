@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Trips", path: "/trips" },
+    { name: "Videos", path: "/videos" },
     { name: "Book Now", path: "/book" },
   ];
 
