@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Youtube, Instagram, MapPin } from "lucide-react";
+import { Menu, X, Youtube, Instagram } from "lucide-react";
 import { Button } from "./ui/button";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +24,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-sunset flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img 
+              src={logo} 
+              alt="Pratik Jain Vlogs" 
+              className="w-10 h-10 rounded-full object-cover"
+            />
             <div className="hidden sm:block">
               <span className="font-serif text-xl font-bold text-foreground">
                 Pratik Jain
@@ -62,7 +65,7 @@ const Navbar = () => {
           {/* Social Links & CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://youtube.com"
+              href="https://youtube.com/@pratikjainvlogs"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-destructive transition-colors"
@@ -120,7 +123,7 @@ const Navbar = () => {
               ))}
               <div className="flex items-center gap-4 pt-4 border-t border-border">
                 <a
-                  href="https://youtube.com"
+                  href="https://youtube.com/@pratikjainvlogs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-muted-foreground hover:text-destructive transition-colors"
