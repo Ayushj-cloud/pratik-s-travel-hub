@@ -20,8 +20,8 @@
     --primary: 18 60% 55%;
     --primary-foreground: 30 30% 97%;
 
-    /* Sage Green - Secondary */
-    --secondary: 140 25% 45%;
+    /* Warm Clay - Secondary */
+    --secondary: 28 45% 42%;
     --secondary-foreground: 30 30% 97%;
 
     /* Warm Muted */
@@ -43,13 +43,13 @@
 
     /* Custom Adventure Colors */
     --adventure-ocean: 18 60% 55%;
-    --adventure-teal: 140 25% 45%;
+    --adventure-teal: 28 45% 42%;
     --adventure-sky: 35 50% 80%;
     --adventure-deep: 25 30% 22%;
     --adventure-foam: 30 25% 92%;
 
     /* Gradients */
-    --gradient-ocean: linear-gradient(135deg, hsl(18, 60%, 55%) 0%, hsl(140, 25%, 45%) 100%);
+    --gradient-ocean: linear-gradient(135deg, hsl(18, 60%, 55%) 0%, hsl(28, 45%, 42%) 100%);
     --gradient-deep: linear-gradient(135deg, hsl(25, 30%, 22%) 0%, hsl(18, 60%, 55%) 100%);
     --gradient-hero: linear-gradient(180deg, hsla(25, 20%, 15%, 0.7) 0%, hsla(25, 20%, 15%, 0.3) 50%, hsla(25, 20%, 15%, 0.8) 100%);
 
@@ -80,7 +80,7 @@
     --primary: 18 55% 50%;
     --primary-foreground: 25 18% 8%;
 
-    --secondary: 140 22% 40%;
+    --secondary: 28 40% 38%;
     --secondary-foreground: 30 20% 92%;
 
     --muted: 25 15% 18%;
@@ -124,7 +124,7 @@
 
 @layer components {
   .text-gradient-ocean {
-    background: linear-gradient(135deg, hsl(18, 60%, 55%) 0%, hsl(140, 25%, 45%) 100%);
+    background: linear-gradient(135deg, hsl(18, 60%, 55%) 0%, hsl(28, 45%, 42%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -138,7 +138,7 @@
   }
 
   .bg-gradient-ocean {
-    background: linear-gradient(135deg, hsl(18, 60%, 55%) 0%, hsl(140, 25%, 45%) 100%);
+    background: linear-gradient(135deg, hsl(18, 60%, 55%) 0%, hsl(28, 45%, 42%) 100%);
   }
 
   .bg-gradient-deep {
