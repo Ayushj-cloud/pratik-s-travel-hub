@@ -20,15 +20,17 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/40 backdrop-blur-xl border-b border-border/30 shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <img 
-              src={logo} 
-              alt="Pratik Jain Vlogs" 
-              className="w-10 h-10 rounded-full object-cover"
+            <motion.img
+              src={logo}
+              alt="Pratik Jain Vlogs"
+              className="w-10 h-10 rounded-full object-cover ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-300"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
             <div className="hidden sm:block">
               <span className="font-serif text-xl font-bold text-foreground">
@@ -41,22 +43,23 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative text-sm font-medium transition-colors duration-300 ${
+                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   isActive(link.path)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
                 {link.name}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-sunset rounded-full"
+                    className="absolute inset-0 rounded-full bg-primary/10 -z-10"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
               </Link>
@@ -64,37 +67,44 @@ const Navbar = () => {
           </div>
 
           {/* Social Links & CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
+          <div className="hidden lg:flex items-center gap-3">
+            <motion.a
               href="https://youtube.com/@pratikjainvlogs"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-destructive transition-colors"
+              className="p-2 rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Youtube className="w-5 h-5" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Instagram className="w-5 h-5" />
-            </a>
+            </motion.a>
             <Link to="/book">
-              <Button variant="hero" size="default">
-                Book a Trip
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button variant="hero" size="default">
+                  Book a Trip
+                </Button>
+              </motion.div>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-foreground"
+          <motion.button
+            className="lg:hidden p-2 rounded-full text-foreground hover:bg-foreground/5 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
+            whileTap={{ scale: 0.9 }}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -105,29 +115,35 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-b border-border"
+            className="lg:hidden bg-background/60 backdrop-blur-2xl border-b border-border/30"
           >
-            <div className="container mx-auto px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
+            <div className="container mx-auto px-4 py-4 space-y-1">
+              {navLinks.map((link, index) => (
+                <motion.div
                   key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block py-2 text-lg font-medium transition-colors ${
-                    isActive(link.path)
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block py-3 px-4 rounded-xl text-lg font-medium transition-all duration-300 ${
+                      isActive(link.path)
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-4 pt-4 border-t border-border/30">
                 <a
                   href="https://youtube.com/@pratikjainvlogs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-muted-foreground hover:text-destructive transition-colors"
+                  className="p-2 rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
                 >
                   <Youtube className="w-6 h-6" />
                 </a>
@@ -135,7 +151,7 @@ const Navbar = () => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                  className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                 >
                   <Instagram className="w-6 h-6" />
                 </a>
